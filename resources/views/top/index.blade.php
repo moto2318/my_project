@@ -12,6 +12,12 @@
 <body>
     Top Controller!!
     <?= $sampleValue?>
+
+    <header>
+        <a href="/login">
+            <h2>ログイン</h2>
+        </a>
+    </header>
 </body>
 
 </html>

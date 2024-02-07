@@ -10,8 +10,8 @@ class TopController extends Controller
     public function index(Request $request){
         $sampleValue = "sample テキストです。";
         
-        $records = DB::connection('mysql')->select("select * from items");
-        $name = $records[0]->name;
+        // $records = DB::connection('mysql')->select("select * from items");
+        // $name = $records[0]->name;
 
         //$insertResult = DB::connection("mysql")->insert("insert into items (id,name,price) values (null,'メロン',2000)");
         //dd($insertResult);
