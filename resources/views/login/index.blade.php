@@ -16,9 +16,9 @@
         <?php if ($variables["isLoginActive"]) { ?>
             <h2 class="title">ログイン状態</h2>
             <a href="/login/unregister">ログアウト</a>
-        <?php } else { ?>
-            <h2 class="title">新規登録</h2>
-            <form ref="registerForm" method="post" action="/login/register">
+            <?php } else { ?>
+                <h2 class="title">新規登録</h2>
+                <form ref="registerForm" method="post" action="/login/register">
                 @csrf
                 <div>
                     ID : <input type="text" v-model="id" name="id">
