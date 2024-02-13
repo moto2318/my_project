@@ -5,27 +5,18 @@ const props = defineProps({
 </script>
 
 <template>
-    <Transition name="modal">
-        <div v-if="show" class="modal-mask">
-        <div class="modal-container">
-            <div class="modal-header">
-            </div>
-                <p>ログイン</p>
-            <div class="modal-body">
-            </div>
-                ID : <input type="text" v-model="id" name="id">
-            <div class="modal-footer">
-            <slot name="footer">
-                PW : <input type="password" v-model="password" name="password">
-                <button
-                class="modal-default-button"
-                @click="$emit('close')"
-                >close</button>
-            </slot>
-            </div>
+    <scrit>
+    <div id="modal">
+        <div id="modal-content" class="modal">
+            <p id="modal-message" class="modal__message">モーダル</p>
+        <span id="modal-cansel" class="modal__cancel" @click="returnFalse()">
+            id
+        </span>
+            <button class="modal__btn" @click="returnTrue()">mail</button>
         </div>
-        </div>
-    </Transition>
+        <div id="modal-overlay"></div>
+    </div>
+    </scrit>
 </template>
 
 <style>
