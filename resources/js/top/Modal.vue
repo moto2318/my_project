@@ -2,7 +2,7 @@
         <div id="app">
             <button @click="openModal">Click</button>
 
-            <div id="overlay" v-show="show">
+            <div id="overlay" v-show="isShow">
             <div id="content">
                 <p>モーダルウィンドウ。</p>
                 <button @click="closeModal">close</button>
@@ -13,15 +13,15 @@
 
     <script setup>
         import { ref } from "vue";
-        const show = ref(false);
+        const isShow = ref(false);
 
         const openModal = () => {
         console.log('click');
-        show.value = true;
+        isShow.value = true;
         };
 
         const closeModal = () => {
-        show.value = false;
+        isShow.value = false;
         };
     </script>
 
@@ -34,6 +34,9 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             }
 
         #content {
