@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="/css/build/top/index.css">
     </head>
     <body>
-        <div class="justifiy-content-center" id="app" >
+        <div id="app" >
             <modal></modal>
         </div>
 
