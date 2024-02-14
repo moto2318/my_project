@@ -13,7 +13,6 @@
             <modal></modal>
         </div>
 
-        {{-- <script src="https://unpkg.com/vue@3"></script> --}}
         <script src="/js/build/top/index.js"></script>
     </body>
 </html>
