@@ -19,7 +19,7 @@
         </section>
     </section>
 
-    <script src="{{ asset('resources/js/top/SampleComponent.vue') }}"></script>
+   <!-- <script src="{{ asset('resources/js/top/SampleComponent.vue') }}"></script> -->
     <button id="show-modal" @click="showModal = true">Show Modal</button>
 
     <Teleport to="body">

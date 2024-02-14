@@ -1,80 +1,45 @@
-<script setup>
-const props = defineProps({
-    show: Boolean
-})
-</script>
+    <template>
+        <div id="app">
+            <button @click="openModal">Click</button>
 
-<template>
-    <scrit>
-    <div id="modal">
-        <div id="modal-content" class="modal">
-            <p id="modal-message" class="modal__message">モーダル</p>
-        <span id="modal-cansel" class="modal__cancel" @click="returnFalse()">
-            id
-        </span>
-            <button class="modal__btn" @click="returnTrue()">mail</button>
+            <div id="overlay" v-show="show">
+            <div id="content">
+                <p>モーダルウィンドウ。</p>
+                <button @click="closeModal">close</button>
+            </div>
+            </div>
         </div>
-        <div id="modal-overlay"></div>
-    </div>
-    </scrit>
-</template>
+    </template>
 
-<style>
-.modal-mask {
-    position: fixed;
-    z-index: 9998;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    transition: opacity 0.3s ease;
-}
+    <script setup>
+        import { ref } from "vue";
+        const show = ref(false);
 
-.modal-container {
-    width: 300px;
-    margin: auto;
-    padding: 20px 30px;
-    background-color: #fff;
-    border-radius: 2px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
-    transition: all 0.3s ease;
-}
+        const openModal = () => {
+        console.log('click');
+        show.value = true;
+        };
 
-.modal-header h3 {
-    margin-top: 0;
-    color: #42b983;
-}
+        const closeModal = () => {
+        show.value = false;
+        };
+    </script>
 
-.modal-body {
-    margin: 20px 0;
-}
+    <style>
+        #overlay {
+            z-index: 1;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            }
 
-.modal-default-button {
-    float: right;
-}
-
-/*
- * The following styles are auto-applied to elements with
- * transition="modal" when their visibility is toggled
- * by Vue.js.
- *
- * You can easily play with the modal transition by editing
- * these styles.
- */
-
-.modal-enter-from {
-    opacity: 0;
-}
-
-.modal-leave-to {
-    opacity: 0;
-}
-
-.modal-enter-from .modal-container,
-.modal-leave-to .modal-container {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-}
-</style>
+        #content {
+            z-index: 2;
+            width: 50%;
+            padding: 1em;
+            background: #fff;
+            }
+    </style>
