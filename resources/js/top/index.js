@@ -3,6 +3,7 @@ import Modal from './Modal.vue';
 
 createApp({
     components: {
-        Modal
+        modal: Modal
     }
-}).mount("#app")
+}).mount('#app');
+
