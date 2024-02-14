@@ -1,5 +1,5 @@
     <template>
-        <div id="app">
+        <div>
             <button @click="openModal">Click</button>
 
             <div id="overlay" v-show="isShow">
